@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- THIS FILE IS NOT USED BY THE FINAL WEBSITE. -->
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -24,9 +25,44 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>One Ocean Expedition</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+        <link href="/css/slick.css" rel="stylesheet">
+        <link href="/css/slick-theme.css" rel="stylesheet">
   </head>
-  <body>
+  <body data-webshopcontext="True">
+    <script>
+    var isStore = true; 
+    window.language = "en";
+    window.contentType = "";
+    window.contextFilter = "";
+
+    function runCustomFunction(sku){ 
+      console.log(sku);
+    }
+
+    function onSearchComplete() {
+      //alert("onSearchComplete");
+      //LoadListFunctions();
+    }
+
+    function LoadUrl(url) {
+        $('.embedModalBody').load(url + " #content", function (result) {
+          $('#embedModal').modal({ show: true });
+        });
+      }
+
+    window.GetTranslation = function(key){
+      switch (key) {
+            case "showing": return "Viser";
+            case "out-of": return "av";
+            case "show": return "Vis";
+        }
+        return key;
+    }
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
